@@ -1,6 +1,6 @@
 # Sudoku problems.
 # The CSP.ac_3() and CSP.backtrack() methods need to be implemented
-
+import time
 from csp import CSP, alldiff
 
 
@@ -19,8 +19,20 @@ def print_solution(solution):
             print('------+-------+------')
 
 
+def format_domains(domains, only_nonsingleton=True):
+    items = []
+    for k in sorted(domains.keys()):
+        vals = sorted(domains[k])
+        if only_nonsingleton and len(vals) <= 1:
+            continue
+        items.append(f"{k}: {{{','.join(str(v) for v in vals)}}}")
+    if not items and only_nonsingleton:
+        return "(Alle domener er singletons etter AC-3)"
+    return "\n".join(items)
+
+
 # Choose Sudoku problem
-grid = open('sudoku_very_hard.txt').read().split()
+grid = open('sudoku_hard.txt').read().split()
 
 width = 9
 box_width = 3
@@ -57,16 +69,33 @@ csp = CSP(
 print(csp.ac_3())
 print_solution(csp.backtracking_search())
 
-# Expected output after implementing csp.ac_3() and csp.backtracking_search():
-# True
-# 7 8 4 | 9 3 2 | 1 5 6
-# 6 1 9 | 4 8 5 | 3 2 7
-# 2 3 5 | 1 7 6 | 4 8 9
-# ------+-------+------
-# 5 7 8 | 2 6 1 | 9 3 4
-# 3 4 1 | 8 9 7 | 5 6 2
-# 9 2 6 | 5 4 3 | 8 7 1
-# ------+-------+------
-# 4 5 3 | 7 2 9 | 6 1 8
-# 8 6 2 | 3 1 4 | 7 9 5
-# 1 9 7 | 6 5 8 | 2 4 3
+
+
+# --- AC-3 ---
+t0 = time.perf_counter()
+ok = csp.ac_3()
+t1 = time.perf_counter()
+ac3_time = t1 - t0
+print("AC-3 result:", ok)
+print(f"AC-3 time: {ac3_time:.6f} s")
+
+print("\nDomains after AC-3. Only the ones with multiple possibilities:")
+print(format_domains(csp.domains, only_nonsingleton=True))
+
+# --- Backtracking ---
+csp.bt_calls = 0
+csp.bt_failures = 0
+
+t2 = time.perf_counter()
+solution = csp.backtracking_search()
+t3 = time.perf_counter()
+bt_time = t3 - t2
+
+print(f"\nBacktracking time: {bt_time:.6f} s")
+print("bt_calls:", csp.bt_calls)
+print("bt_failures:", csp.bt_failures)
+
+print("\nSolutiom:")
+print_solution(solution)
+
+print(f"hard & {csp.bt_calls} & {csp.bt_failures} & {ac3_time:.6f} & {bt_time:.6f} & {ac3_time+bt_time:.6f} \\\\")
