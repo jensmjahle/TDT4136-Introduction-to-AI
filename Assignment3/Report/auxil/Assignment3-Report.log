@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.12)  20 OCT 2025 22:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.9.12)  22 OCT 2025 11:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -512,10 +512,23 @@ File: Images/tic_tac_toe.png Graphic file (type png)
 <use Images/tic_tac_toe.png>
 Package pdftex.def Info: Images/tic_tac_toe.png  used on input line 41.
 (pdftex.def)             Requested size: 236.01561pt x 559.3121pt.
+<Images/tic_tac_toe_decision_time_minimax.png, id=23, 658.46pt x 771.88374pt>
+File: Images/tic_tac_toe_decision_time_minimax.png Graphic file (type png)
+<use Images/tic_tac_toe_decision_time_minimax.png>
+Package pdftex.def Info: Images/tic_tac_toe_decision_time_minimax.png  used on 
+input line 50.
+(pdftex.def)             Requested size: 226.57297pt x 265.59349pt.
+<Images/tic_tac_toe_decision_time_alphabeta.png, id=24, 722.7pt x 788.9475pt>
+File: Images/tic_tac_toe_decision_time_alphabeta.png Graphic file (type png)
+<use Images/tic_tac_toe_decision_time_alphabeta.png>
+Package pdftex.def Info: Images/tic_tac_toe_decision_time_alphabeta.png  used o
+n input line 57.
+(pdftex.def)             Requested size: 226.57297pt x 247.34001pt.
 
 [4
 
- <./Images/tic_tac_toe.png>]
+ <./Images/tic_tac_toe.png>] [5 <./Images/tic_tac_toe_decision_time_minimax.png
+> <./Images/tic_tac_toe_decision_time_alphabeta.png>]
 (C:/Users\jahle\OneDrive\Master Datateknologi\Intro Kunstig Intelligens\Øvinge
 r\TDT4136-Introduction-to-AI\Assignment3\Report\auxil\Assignment3-Report.aux)
  ***********
@@ -528,22 +541,22 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 12373 strings out of 474486
- 261011 string characters out of 5743755
+ 12399 strings out of 474486
+ 262269 string characters out of 5743755
  1926542 words of memory out of 5000000
- 34479 multiletter control sequences out of 15000+600000
+ 34505 multiletter control sequences out of 15000+600000
  561404 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,6n,107p,454b,462s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,8n,107p,454b,462s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/jahle/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmr10.pfb><C:/Users/jahle/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
 onts/cm/cmr12.pfb><C:/Users/jahle/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/cm/cmr17.pfb>
 Output written on "C:/Users\jahle\OneDrive\Master Datateknologi\Intro Kunstig I
 ntelligens\Øvinger\TDT4136-Introduction-to-AI\Assignment3\Report\out\Assignmen
-t3-Report.pdf" (4 pages, 137081 bytes).
+t3-Report.pdf" (5 pages, 172649 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
+ 47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 38 words of extra memory for PDF output out of 10000 (max. 10000000)
 

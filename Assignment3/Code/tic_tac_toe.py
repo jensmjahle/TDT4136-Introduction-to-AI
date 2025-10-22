@@ -1,5 +1,6 @@
 from copy import deepcopy
 import math
+import time
 
 State = tuple[int, list[list[int | None]]]  # Tuple of player (whose turn it is),
                                             # and board
@@ -111,7 +112,11 @@ def minimax_search(game: Game, state: State) -> Action | None:
 
         return best_value, best_action
 
+    starting_time = time.time()
     _, chosen_action = max_value(state)
+    ending_time = time.time()
+    time_taken = ending_time - starting_time
+    print(f'Minimax decision time: {time_taken:.6f} seconds')
     return chosen_action
 
 def alphabeta_search(game: Game, state: State) -> Action | None:
@@ -159,7 +164,11 @@ def alphabeta_search(game: Game, state: State) -> Action | None:
 
         return best_value, best_action
 
+    starting_time = time.time()
     _, chosen_action = max_value(state, -math.inf, math.inf)
+    ending_time = time.time()
+    time_taken = ending_time - starting_time
+    print(f'Alpha–Beta decision time: {time_taken:.6f} seconds')
     return chosen_action
 
 
